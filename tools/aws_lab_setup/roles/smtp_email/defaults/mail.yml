@@ -1,1 +1,4 @@
 smtp_email: yes
+smtp_host: outlook.office365.com
+smtp_user: '{{ instructor_email }}'
+#smtp_password:

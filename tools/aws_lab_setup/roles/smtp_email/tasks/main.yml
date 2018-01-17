@@ -1,23 +1,12 @@
-- name: Send email to students with inventroy attached
-  delegate_to: localhost
-  vars:
-    smtp_host: outlook.office365.com
-    smtp_user: '{{ instructor_email }}'
-
-  vars_prompt:
-    - name: smtp_password
-      prompt: "Password for {{ smtp_user }}"
-
-  tasks:
-  - name: Send email
-    mail:
-      host: '{{ smtp_host }}'
-      username: '{{ smtp_user }}'
-      password: '{{ smtp_password }}'
-      from: '{{ smtp_user }}'
-      to: "{{ instructor_email }}"
-      subject: "Ansible Training Lab"
-      attach: instructor_inventory.txt
-    when: smtp_email and smtp_password is defined
-    tags:
-      - email
+- name: Send smtp email
+  mail:
+    host: '{{ smtp_host }}'
+    username: '{{ smtp_user }}'
+    password: '{{ smtp_password }}'
+    from: '{{ smtp_user }}'
+    to: "{{ instructor_email }}"
+    subject: "Ansible Training Lab"
+    attach: instructor_inventory.txt
+  when: smtp_email and smtp_password is defined
+  tags:
+    - email
