@@ -1,0 +1,7 @@
+users:
+  - name: Student01
+    username: student01
+    email: echong@iisl.com
+  - name: Student02
+    username: student02
+    email: echong@iisl.com

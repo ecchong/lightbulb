@@ -1,7 +1,4 @@
-- name: Users list
-  include_vars:
-    file: users.yml
-
+---
 - name: Create lab instances in AWS
   hosts: localhost
   connection: local
