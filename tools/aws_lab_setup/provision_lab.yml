@@ -1,3 +1,7 @@
+- name: Users list
+  include_vars:
+    file: users.yml
+
 - name: Create lab instances in AWS
   hosts: localhost
   connection: local
@@ -25,4 +29,4 @@
   become: no
   gather_facts: no
   roles:
-    - email
+    - smtp_email
